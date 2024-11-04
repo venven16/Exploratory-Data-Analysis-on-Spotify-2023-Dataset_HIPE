@@ -4,3 +4,8 @@ This repository contains Python codes for solving the given programming problems
 
 ### Deliverable Explanation: 
 **In this deliverable, you will perform an exploratory data analysis (EDA) on a dataset containing information about popular tracks on Most Streamed Spotify Songs 2023 (https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023Links to an external site.). This task aims to analyze, visualize, and interpret the data to extract meaningful insights.**
+
+#### Guide Questions: 
+**Overview of Dataset** 
+##### 1. How many rows and columns does the dataset contain?
+##### Solution: 
