@@ -58,6 +58,21 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** The Spotify DataFrame, which holds data imported from an Excel file, has rows and columns, as indicated by this code. The number of rows (data entries) and columns (features or attributes) are indicated by the first and second values of the tuple that are returned using spotify.shape. Before conducting a more thorough analysis or visualization, it is crucial to rapidly comprehend the size and dimensionality of the dataset, which is made easier by this overview. 
 
+**2. What are the data types of each column? Are there any missing values?**
+
+**Solution:**
+
+**Fucntion:** **`spotify.dtypes`** 
+
+![image](https://github.com/user-attachments/assets/95bd8a28-55ad-4dc1-9bc6-f99c92f15fc9)
+
+**Description:** The data type of each column in the Spotify DataFrame is shown by this code, which makes it easier to comprehend if the data is strings, floats, or integers. 
+
+**Function:** **`spotify.isnull().sum()`** 
+
+**Description:** This code examines each Spotify DataFrame column for missing values. It counts the amount of NaN values in each column using isnull().sum(), which helps locate any missing data requiring attention.
+
+
 
 
 
