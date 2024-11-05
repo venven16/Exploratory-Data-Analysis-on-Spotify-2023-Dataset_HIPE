@@ -52,7 +52,12 @@ This repository contains Python codes for solving the given programming problems
 
 **Solution:**
 
-**Function:** 
+**Function:** **`spotify.shape`** 
+
+![image](https://github.com/user-attachments/assets/3b6a2a1e-86d9-4da1-a789-18ffc75e4e54)
+
+**Description:** The Spotify DataFrame, which holds data imported from an Excel file, has rows and columns, as indicated by this code. The number of rows (data entries) and columns (features or attributes) are indicated by the first and second values of the tuple that are returned using spotify.shape. Before conducting a more thorough analysis or visualization, it is crucial to rapidly comprehend the size and dimensionality of the dataset, which is made easier by this overview. 
+
 
 
 
