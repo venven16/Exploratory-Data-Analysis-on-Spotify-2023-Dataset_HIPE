@@ -40,7 +40,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** This code displays the contents of a Pandas DataFrame named `spotify` after loading data from an Excel file called `spotify-2023.xlsx`. It reads the file and arranges the data in a structured manner using `pd.read_excel`, which makes it simple to examine, work with, and display in Python. Spotify, in the end, is to declare the DataFrame needed. 
 
-#### Output: 
+### Output: 
 
 ![image](https://github.com/user-attachments/assets/5a319912-3c62-4e34-a33b-341d7d07b400)
 
@@ -58,7 +58,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** The Spotify DataFrame, which holds data imported from an Excel file, has rows and columns, as indicated by this code. The number of rows (data entries) and columns (features or attributes) are indicated by the first and second values of the tuple that are returned using spotify.shape. Before conducting a more thorough analysis or visualization, it is crucial to rapidly comprehend the size and dimensionality of the dataset, which is made easier by this overview. 
 
-#### Output 
+### Output 
 
 ![image](https://github.com/user-attachments/assets/9d3ec7fa-66e3-423c-8f1b-d0e68aa8e9a5)
 
@@ -73,7 +73,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** The data type of each column in the Spotify DataFrame is shown by this code, which makes it easier to comprehend if the data is strings, floats, or integers.
 
-#### Output 
+### Output 
 
 ![image](https://github.com/user-attachments/assets/a33ddeb0-bef6-44e8-a14d-c7c3586c4486)
 
@@ -82,7 +82,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** This code examines each Spotify DataFrame column for missing values. It counts the amount of NaN values in each column using isnull().sum(), which helps locate any missing data requiring attention.
 
-#### Output 
+### Output 
 
 ![image](https://github.com/user-attachments/assets/1ba00c35-cd63-4045-9ad6-31134a3db3d0)
 
@@ -119,7 +119,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** This code determines and outputs the standard deviation of the Spotify DataFrame's streams column. The standard deviation measures the stream counts' degree of variance or disorder. Whereas a lower standard deviation implies that the stream numbers are nearer the mean, a higher standard deviation shows that they are dispersed over a larger range. This metric reveals the consistency of streaming performance across the dataset's various tracks.
 
-#### Output 
+### Output 
 
 ![image](https://github.com/user-attachments/assets/615029b1-e803-4e8d-93c2-43bd8a450593)
 
@@ -140,7 +140,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** The `artist_count` column in the `spotify` DataFrame is statistically summarized by this code, which shows the count, mean, minimum, maximum, and quartiles. This data aids in comprehending the distribution of artists linked to each entry, which may reveal patterns in the dataset's solo or collaborative performances.
 
-#### Output 
+### Output 
 
 ![image](https://github.com/user-attachments/assets/6fbd9c0a-e67a-4eb9-8e05-93ccad59c940)
 
@@ -224,13 +224,13 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
 
-#### Output for `released_year` 
+### Output for `released_year` 
 
 ![image](https://github.com/user-attachments/assets/feca01b6-c2df-4c7d-aaa9-fd637fa88c9d)
 
 **Explanation:** The distribution of song release years in the dataset is shown in this picture using a box plot on the right and a histogram on the left. The histogram indicates a right-skewed distribution where recent releases predominate, which reveals that most songs were released in the last few years, with a notable concentration in the 2020s. With a peak close to the most recent years, the Kernel Density Estimate (KDE) curve validates this concentration. The box plot on the right shows the variability and central tendency, with the median year near the most recent period. Compared to the new releases, the many outliers on the left are songs from earlier decades (before the 2000s). This graphic indicates that the dataset is biased toward newer songs, with older releases being exceptions rather than the norm.
 
-#### Output for `artist_count` 
+### Output for `artist_count` 
 
 ![image](https://github.com/user-attachments/assets/ac45bf8c-3580-4054-8b4a-1662c6665ac4)
 
@@ -253,7 +253,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** The output is introduced with a title message printed by this code snippet, which states that the top 5 most-streamed tunes in 2023 are represented by the results below. From the top_five_tracks DataFrame, it shows only the 'track_name' and 'streams' columns, highlighting the names and stream counts of these top tracks.
 
-#### Output
+### Output
 
 ![image](https://github.com/user-attachments/assets/d596bfca-afc4-4ce3-8f78-d3db65b47d4b)
 
@@ -271,7 +271,7 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** An output introducing the top five musicians with the most tracks is displayed by the code snippet `print(f"The Top 5 Most Frequent Artists Based on the Number of Tracks: \n")` followed by `print(top_artists)`. Context is provided by the first line using an f-string, and these artists' names and track counts are printed in the second line using the `top_artists` variable. The results are presented in an easy-to-read style.
 
-#### Output 
+### Output 
 
 ![image](https://github.com/user-attachments/assets/f25bfe44-c7aa-4d21-b501-71b374a8923c)
 
@@ -505,6 +505,126 @@ Explanation:
 ### Output 
 
 ![image](https://github.com/user-attachments/assets/ced5015b-f3fd-48f8-abe9-4053abbee57d)
+
+**2. Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?**
+
+![image](https://github.com/user-attachments/assets/6e77e0c3-4f4e-4c68-9512-a17b9419f886)
+
+**Function: `dance_energy_corr = spotify['danceability_%'].corr(spotify['energy_%'])`**
+
+**Description:** The correlation coefficient between the 'danceability_%' and 'energy_%' columns in the Spotify DataFrame is determined by this line using the corr() method. The outcome, which shows the direction and intensity of the linear relationship between danceability and energy, is recorded in the variable dance_energy_corr.
+
+**Function: `valence_acousticness_corr = spotify['valence_%'].corr(spotify['acousticness_%'])`**
+
+**Description:** This line uses the corr() method to determine the correlation coefficient between the 'valence_%' and 'acousticness_%' columns in the Spotify DataFrame. The outcome, which illustrates the connection between valence and acousticness, is kept in the variable valence_acousticness_corr.
+
+**Function: `print(f"Correlation between Danceability and Energy: {dance_energy_corr:.2f}\n")`**
+
+**Description:** This line outputs a formatted string with the determined relationship between energy and danceability. The format specification :.2f is used to round the correlation value to two decimal places, and a newline character is appended for spacing.
+
+**Function: `print(f"Correlation between Valence and Acousticness: {valence_acousticness_corr:.2f}\n")`**
+
+**Description:** The estimated correlation between valence and acousticness is reported in a prepared string that is printed in this line. The number is rounded to two decimal places and a newline character is added for clarity.
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/7a3d7877-9aba-477a-81ce-db3b3a4535f7)
+
+**Function: `plt.figure(figsize=(12, 5))`**
+
+![image](https://github.com/user-attachments/assets/bf55602d-c589-4467-b2f1-be120d069423)
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 12 inches wide and 5 inches tall.
+
+#### Scatter plot for Danceability vs. Energy
+
+![image](https://github.com/user-attachments/assets/05947e1b-dd5a-4409-a3d7-e0f20b865fa9)
+
+**Function: `plt.subplot(1, 2, 1)`**
+
+**Description:** For Matplotlib, the line plt.subplot(1, 2, 1) creates a subplot inside a grid layout. It places the current plot in the first subplot (1st column) and defines a grid with 1 row and 2 columns. This makes it possible to compare or present related visualizations in a straightforward manner by allowing many plots to be shown side by side within a single figure.
+
+**Function: `sns.scatterplot(x='danceability_%', y='energy_%', data=spotify, color='pink')`**
+
+**Description:** This line uses Seaborn's scatterplot function to generate a scatter plot. The Spotify DataFrame data is used to plot the 'danceability_%' on the x-axis versus the 'energy_%' on the y-axis. The plot's pink dots make it easy to see how the two variables are related to one another.
+
+**Function: `plt.title('Danceability vs. Energy')`**
+
+**Description:** This line changes the scatter plot's title to "Danceability vs. Energy," highlighting the relationship between the music' danceability and energy levels.
+
+**Function: `plt.xlabel('Danceability (in %)')`**
+
+**Description:** This line labels the x-axis as `Danceability (in %)`, clarifying that the horizontal axis represents the beats per minute of the tracks.
+
+**Function: `plt.ylabel('Energy (in %)')`**
+
+**Description:** With this line labeling the y-axis "Energy (in %)," the vertical axis is shown to be the number of streams for the tracks.
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/cae12cab-bf94-43b1-89ae-a9cb28ac666a)
+
+
+#### Scatter plot for Valence vs. Acousticness
+
+![image](https://github.com/user-attachments/assets/b362cec9-35f6-4ac3-8cd7-ea984e6cad4f)
+
+**Function: `plt.subplot(1, 2, 2)`**
+
+**Description:** This line specifies a grid with one row and two columns for Matplotlib, setting up a subplot inside the grid layout. It allows two plots to be shown side by side in the same figure by placing the current plot in the second subplot (2nd column).
+
+**Function: `sns.scatterplot(x='valence_%', y='acousticness_%', data=spotify, color='purple')`**
+
+**Description:** This line uses Seaborn's scatterplot function to generate a scatter plot. The Spotify DataFrame data plots the 'valence_%' on the x-axis versus the 'acousticness_%' on the y-axis. This plot's purple points graphically depict the connection between acousticness and valence.
+
+**Function: `plt.title('Valence vs. Acousticness')`**
+
+**Description:** This line changes the scatter plot's title to "Valence vs. Acousticness," highlighting the relationship between the recordings' valence and acousticness levels.
+
+**Function: `plt.xlabel('Valence (in %)')`**
+
+**Description:** This line labels the x-axis as `Valence (in %)`, clarifying that the horizontal axis represents the beats per minute of the tracks.
+
+**Function: `plt.ylabel('Acousticness (in %)')`**
+
+**Description:** With this line labeling the y-axis "Acousticness (in %)," the vertical axis is shown to be the number of streams for the tracks.
+
+**Function: `plt.tight_layout()`**
+
+**Description:** This line modifies the plot parts' spacing to ensure everything is aesthetically pleasing and fits nicely inside the figure area.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/4c15f6eb-9739-4ca9-bcff-51a5efaf389e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
