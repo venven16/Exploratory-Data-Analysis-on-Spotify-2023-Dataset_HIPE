@@ -47,7 +47,9 @@ This repository contains Python codes for solving the given programming problems
 
 #### Guide Questions: 
 **Overview of Dataset** 
+
 **1. How many rows and columns does the dataset contain?** 
+
 **Solution:**
 
 **Function:** 
