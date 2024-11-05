@@ -119,6 +119,51 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** This code determines and outputs the standard deviation of the Spotify DataFrame's streams column. The standard deviation measures the stream counts' degree of variance or disorder. Whereas a lower standard deviation implies that the stream numbers are nearer the mean, a higher standard deviation shows that they are dispersed over a larger range. This metric reveals the consistency of streaming performance across the dataset's various tracks.
 
+#### Output 
+
+![image](https://github.com/user-attachments/assets/615029b1-e803-4e8d-93c2-43bd8a450593)
+
+
+**2. What is the distribution of released_year and artist_count? Are there any noticeable trends or outliers?**
+
+**Solution:**
+
+**Function: `print(spotify['released_year'].describe())`**
+
+![image](https://github.com/user-attachments/assets/f4af6ec5-96b5-4b6d-981b-614a6f4e9fe6)
+
+**Description:** This code summarizes the descriptive statistics for the Spotify DataFrame's released_year column. Information such as the release years' count, mean, minimum, maximum, and quartiles (25%, 50%, and 75%) are returned by invoking the `.describe()` function. The summary provides insights into trends or ranges of song releases and aids in comprehending the dataset's release year distribution.
+
+**Function: `print(spotify['artist_count'].describe())`**
+
+![image](https://github.com/user-attachments/assets/96bde568-951e-4717-8128-2ce2e0f4cb56)
+
+**Description:** The `artist_count` column in the `spotify` DataFrame is statistically summarized by this code, which shows the count, mean, minimum, maximum, and quartiles. This data aids in comprehending the distribution of artists linked to each entry, which may reveal patterns in the dataset's solo or collaborative performances.
+
+#### Output 
+
+![image](https://github.com/user-attachments/assets/6fbd9c0a-e67a-4eb9-8e05-93ccad59c940)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
