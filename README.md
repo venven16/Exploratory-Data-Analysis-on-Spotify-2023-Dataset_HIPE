@@ -184,6 +184,89 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
 
+##### Graph for `artisit_count`
+
+![image](https://github.com/user-attachments/assets/5adee19f-1119-4bdc-a4e1-4d8817ed5b75)
+
+**Function: `plt.figure(figsize=(12, 5))`**
+
+**Description:** It creates a new figure and sets up the area for subplots by setting its size to 12 by 5 inches.
+
+**Function: `plt.subplot(1, 2, 1)`**
+
+**Description:** It specifies the first subplot in a 1x2 grid layout, designating the first of two adjacent positions for this plot. 
+
+**Function: `sns.histplot(spotify['artist_count'], bins=10, kde=True)`**
+
+**Description:** It displays the distribution form of the data by plotting a kernel density estimate (KDE) curve and a histogram of the artist_count column with 10 bins.
+
+**Function: `plt.title("Distribution for Artist Count")`**
+
+**Description:** It sets the first subplot's title to clarify that the artist_count distribution is displayed.
+
+**Function: `plt.subplot(1, 2, 2)`**
+
+**Description:** Place this plot next to the first subplot by moving to the second subplot slot in the 1x2 grid.
+
+**Function: `sns.boxplot(x = spotify['artist_count'])`** 
+
+**Description:** It creates a box plot for artist_count, which aids in displaying the data's median, spread, and any outliers.
+
+**Function: `plt.title('Box Plot of Artist Count')`**
+
+**Description:** It specifies that the second subplot is a box plot for artist_count in its title.
+
+**Function: `plt.tight_layout()`**
+
+**Description:** Modifies the distance between subplots to create a neat, non-overlapping arrangement.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
