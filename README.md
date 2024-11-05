@@ -99,6 +99,53 @@ This repository contains Python codes for solving the given programming problems
 
 **Note: I searched about this code because the data type of streams is in object, and I'm not sure how I will manipulate it.**  
 
+**Description:** This code changes the values in the Spotify DataFrame's streams column to a numeric data type. Substituting NaN for any non-numeric values, errors =' coerce' makes handling inconsistent or erroneous data during analysis or computations simpler. This stage guarantees that mathematical operations and visualizations may appropriately use the streams column. 
+
+**Function: `mean_streams = spotify['streams'].mean()`**
+
+![image](https://github.com/user-attachments/assets/3fbddb74-525f-4b6c-aed9-85e3ddd9ac09)
+
+**Description:** This code determines the average (mean) number of streams in the Spotify DataFrame's streams column and outputs the outcome. It provides a summary metric that reflects the average number of streams by calculating the mean, which sheds light on the overall popularity of the songs in the dataset.
+
+**Function:** **`median_streams = spotify['streams'].mean()`**
+
+![image](https://github.com/user-attachments/assets/fbb0bd5a-e40e-404a-a6b8-e2e5afaa1bb0)
+
+**Description:** This code calculates the median number of streams in the streams column of the spotify DataFrame and prints the result. The median represents the middle value when the stream counts are sorted in ascending order, providing a robust measure of central tendency less affected by extreme values or outliers than the mean. This helps better understand the typical streaming performance of songs in the dataset.
+
+**Function: `std_streams = spotify['streams'].std()`** 
+
+![image](https://github.com/user-attachments/assets/f83b7338-258d-450d-9e9d-a9992ea3b35c)
+
+**Description:** This code determines and outputs the standard deviation of the Spotify DataFrame's streams column. The standard deviation measures the stream counts' degree of variance or disorder. Whereas a lower standard deviation implies that the stream numbers are nearer the mean, a higher standard deviation shows that they are dispersed over a larger range. This metric reveals the consistency of streaming performance across the dataset's various tracks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
