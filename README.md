@@ -322,8 +322,7 @@ This repository contains Python codes for solving the given programming problems
 
 ![image](https://github.com/user-attachments/assets/124f7148-f817-4dd8-a5b1-6ce761637aab)
 
-Explanation: 
-
+**Explanation:** From the 1930s to the 2020s, the number of music tracks released annually is depicted in this line graph. It demonstrates that until the 2010s, when it started to sharply rise, the number of tracks released stayed quite low. The number of tracks published increased rapidly by 2020. Given the popularity of streaming services and the simplicity with which music may now be created and shared, this data may be seen as pointing to a major change in the music industry.
 
 **2. Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases?**
 
@@ -441,6 +440,8 @@ Explanation:
 
 ![image](https://github.com/user-attachments/assets/11a7340f-297b-46b2-a15a-02476ec20c1d)
 
+**Explanation:** This scatterplot displays the correlation between a song's beats per minute (BPM) and the quantity of streams it receives. The graphic indicates that the two variables do not clearly relate to one another. Certain songs with a high BPM have few streams, whereas other songs with a low BPM have many. This implies that a song's BPM is not a reliable indicator of how many streams it will get.
+
 #### Scatter plot for Streams vs. Danceability
 
 ![image](https://github.com/user-attachments/assets/b1801eea-4aef-4a7a-8c9b-0652bae421bd)
@@ -468,6 +469,10 @@ Explanation:
 ### Output 
 
 ![image](https://github.com/user-attachments/assets/5eac8cf8-e2a4-4f3c-861d-f132566ad5d9)
+
+**Explanation:** The scatterplot illustrates the connection between a song's danceability and its quantity of streams. The two variables do not appear to be related. Certain songs with a lot of streams are danceable, but there are also a lot of songs with a lot of streams that are not danceable. On the other hand, a lot of songs with a lot of danceability have very few streams, and a lot of songs with a lot of danceability have extremely few streams.
+
+The scatterplot demonstrates that a song's danceability is not directly correlated with its amount of streams. A song's success is also influenced by other elements, including the song's quality, marketing and promotion, and the artist's level of popularity.
 
 #### Scatter plot for Streams vs. Energy
 
@@ -504,6 +509,8 @@ Explanation:
 ### Output 
 
 ![image](https://github.com/user-attachments/assets/ced5015b-f3fd-48f8-abe9-4053abbee57d)
+
+**Explanation:** The scatterplot illustrates how a song's energy and the quantity of streams it has received are related. The two factors do not appear to be clearly correlated. This implies that a song's popularity is not much influenced by its level of activity.
 
 **2. Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?**
 
@@ -563,6 +570,7 @@ Explanation:
 
 ![image](https://github.com/user-attachments/assets/cae12cab-bf94-43b1-89ae-a9cb28ac666a)
 
+**Explanation:** The scatterplot indicates that danceability and song energy are generally positively correlated. This implies that a song's intensity level tends to rise in tandem with its danceability. But the relationship isn't flawless, as some songs have a lot of energy but aren't really danceable, and vice versa. Overall, the evidence points to a higher likelihood of energy in songs with greater danceability.
 
 #### Scatter plot for Valence vs. Acousticness
 
@@ -599,6 +607,8 @@ Explanation:
 ### Output 
 
 ![image](https://github.com/user-attachments/assets/4c15f6eb-9739-4ca9-bcff-51a5efaf389e)
+
+**Explanation:** The scatterplot illustrates how acousticness and valence relate to a group of songs. Because of the small positive association, acousticness tends to rise slightly in tandem with valence. The data, however, is highly scattered, indicating that the link is weak. It would be impossible to predict one feature based on another because there is no discernible pattern.
 
 ### Platform Popularity 
 
@@ -683,6 +693,8 @@ Explanation:
 ### Output 
 
 ![image](https://github.com/user-attachments/assets/b45fc83b-eb31-429b-8922-c30490a2297b)
+
+**Explanation:** The graph shows the total number of tracks in different playlists by different platforms. Spotify has the most number of tracks followed by Deezer, Apple Music has the least number of tracks.
 
 ### Advanced Analysis 
 
