@@ -554,11 +554,11 @@ Explanation:
 
 **Function: `plt.xlabel('Danceability (in %)')`**
 
-**Description:** This line labels the x-axis as `Danceability (in %)`, clarifying that the horizontal axis represents the beats per minute of the tracks.
+**Description:** This line labels the x-axis as `Danceability (in %)`, clarifying that the horizontal axis represents the danceability in %.
 
 **Function: `plt.ylabel('Energy (in %)')`**
 
-**Description:** With this line labeling the y-axis "Energy (in %)," the vertical axis is shown to be the number of streams for the tracks.
+**Description:** With this line labeling the y-axis "Energy (in %)," the vertical axis is shown to be the energy in %.
 
 ### Output 
 
@@ -583,11 +583,11 @@ Explanation:
 
 **Function: `plt.xlabel('Valence (in %)')`**
 
-**Description:** This line labels the x-axis as `Valence (in %)`, clarifying that the horizontal axis represents the beats per minute of the tracks.
+**Description:** This line labels the x-axis as `Valence (in %)`, clarifying that the horizontal axis represents the valence in %.
 
 **Function: `plt.ylabel('Acousticness (in %)')`**
 
-**Description:** With this line labeling the y-axis "Acousticness (in %)," the vertical axis is shown to be the number of streams for the tracks.
+**Description:** With this line labeling the y-axis "Acousticness (in %)," the vertical axis is shown to be the number acousticness in %.
 
 **Function: `plt.tight_layout()`**
 
@@ -601,6 +601,304 @@ Explanation:
 
 ![image](https://github.com/user-attachments/assets/4c15f6eb-9739-4ca9-bcff-51a5efaf389e)
 
+### Platform Popularity 
+
+**1. How do the numbers of tracks in spotify_playlists, deezer_playlist, and apple_playlists compare? Which platform seems to favor the most popular tracks?**
+
+![image](https://github.com/user-attachments/assets/67ecf65f-e1d3-4c97-bb18-df3b762f0bf7)
+
+**Function: `spotify_tracks = spotify['in_spotify_playlists'].sum()`**
+
+**Description:** The overall number of tracks in Spotify playlists is determined by this line. It applies the sum() function, which adds up the values in the 'in_spotify_playlists' column of the Spotify DataFrame. The variable spotify_tracks contains the result.
+
+**Function: `deezer_tracks = spotify['in_deezer_playlists'].sum()`**
+
+**Description:** This line determines how many music are in Deezer playlists overall. Like the line before it, it retrieves the Spotify DataFrame's 'in_deezer_playlists' column and aggregates the results using the sum() method. The variable deezer_tracks contains the result.
+
+**Function: `apple_tracks = spotify['in_apple_playlists'].sum()`**
+
+**Description:** The overall number of tracks in Apple playlists is determined by this line. To obtain the total, it uses the sum() function on the Spotify DataFrame's 'in_apple_playlists' column. The variable apple_tracks contains the result.
+
+![image](https://github.com/user-attachments/assets/f80f8d39-a038-40f7-8ed5-d9afcbdd09e6)
+
+**Function: `track_counts = pd.DataFrame({
+    'Platform': ['Spotify', 'Deezer', 'Apple Music'],
+    'Total Tracks': [spotify_tracks, deezer_tracks, apple_tracks]})`**
+
+**Description:** The line of code creates a Pandas DataFrame named `track_counts` to organize the total number of tracks across different music streaming platforms. It uses a dictionary where the key `'Platform'` lists the platform names `['Spotify', 'Deezer', 'Apple Music']`, and the key `'Total Tracks'` contains the corresponding total track counts `[spotify_tracks, deezer_tracks, apple_tracks]`. This DataFrame provides a clear comparison of track availability among these services.
+
+**Function: `plt.figure(figsize=(16, 7))`**
+
+![image](https://github.com/user-attachments/assets/253f9dac-1604-438e-8859-23509c62c002)
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 16 inches wide and 7 inches tall.
+
+#### Graphing the number of tracks for per platform using bar plot
+
+**Function: `plt.bar(track_counts['Platform'], track_counts['Total Tracks'], color=['pink', 'purple', 'skyblue'])`**
+
+**Description:** This line uses the bar function in Matplotlib to generate a bar chart. It makes use of the values from the track_counts DataFrame's Platform column for the x-axis and the Total Tracks column for the y-axis. To visually differentiate the platforms, the bars are colored with a predetermined list of hues: sky blue for Apple Music, purple for Deezer, and pink for Spotify.
+
+**Function: `plt.title('Total Number of Tracks in Different Playlists by Different Platforms')`**
+
+**Description:** By setting the bar chart's title to "Total Number of Tracks in Different Playlists by Different Platforms," this line places the chart's meaning in perspective.
+
+**Function: `plt.xlabel('Platform')`**
+
+**Description:** This line labels the x-axis as `Platform`, clarifying that the horizontal axis represents each platform.
+
+**Function: `plt.ylabel('Total Tracks')`**
+
+**Description:** With this line labeling the y-axis "Total Tracks," the vertical axis is shown to be the number of total tracks.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+**Function: `popularity = 5000000`**
+
+![image](https://github.com/user-attachments/assets/68ac9791-29d2-46d9-89f8-94ebd592e598)
+
+**Description:** It sets the standard of popularity to 5000000 streams 
+
+![image](https://github.com/user-attachments/assets/1798e822-3fab-4da6-92c2-492787c44fbe)
+
+**Function: `popular_tracks_spotify = spotify[spotify['streams'] > popularity]['in_spotify_playlists'].count()`**
+
+**Description:** Only tracks whose number of streams is beyond a predetermined popularity threshold are included in the Spotify DataFrame after this line filters it. The result is then stored in the variable popular_tracks_spotify, which counts the number of tracks in the 'in_spotify_playlists' column that satisfy this requirement.
+
+**Function: `popular_tracks_deezer = spotify[spotify['streams'] > popularity]['in_deezer_playlists'].count()`**
+
+**Description:** This line, like the one before it, searches the Spotify DataFrame for music that have more streams than the popularity threshold. The number of times these tracks appear in the 'in_deezer_playlists' column is counted and stored in the popular_tracks_deezer variable.
+
+**Function: `popular_tracks_apple = spotify[spotify['streams'] > popularity]['in_apple_playlists'].count()`**
+
+**Description:** A similar pattern is used in this line, which filters the DataFrame for tracks whose streams are higher than the popularity level. It keeps track of how many tracks in the 'in_apple_playlists' column satisfy this requirement and saves the result in the popular_tracks_apple variable.
+
+**Function: `print(f"Popular Tracks in Spotify: {popular_tracks_spotify}\n") print(f"Popular Tracks in Deezer: {popular_tracks_deezer}\n") print(f"Popular Tracks in Apple Music: {popular_tracks_apple}")`**
+
+![image](https://github.com/user-attachments/assets/110d1b0e-8092-4145-b418-68dedde9345e)
+
+**Description:** The number of popular tracks with streams above the popularity threshold across various platforms is printed in these three lines. The number of popular songs for Spotify, Deezer, and Apple Music is output in each line, providing a brief overview of the proportion of high-stream music in playlists on each platform. 
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/b45fc83b-eb31-429b-8922-c30490a2297b)
+
+### Advanced Analysis 
+
+**1. Based on the streams data, can you identify any patterns among tracks with the same key or mode (Major vs. Minor)?**
+
+![image](https://github.com/user-attachments/assets/5f9fdb35-7ad2-4984-befa-0a92c576ef5a)
+
+**Function: `key_groups = spotify.groupby('key')['streams'].agg(['mean', 'median', 'std', 'count']).reset_index()`**
+
+**Description:** This line groups the Spotify DataFrame according to the 'key' column and computes the mean, median, standard deviation (std), and count for the'streams' column within each group. The grouped data is converted back into a standard DataFrame format using the reset_index() function, creating a new DataFrame called key_groups that contains statistics of streams by musical key.
+
+**Function: `print(f"Statistics of Streams by Key:\n \n{key_groups}")`**
+
+**Description:** The key_groups DataFrame, which shows the computed statistics (mean, median, standard deviation, and count) of streams for each musical key, is displayed after this line prints the title "Statistics of Streams by Key".
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/47640529-0574-4f1b-a554-da859c92491f)
+
+#### Graphing the distribution of streams for each key using box plot
+
+![image](https://github.com/user-attachments/assets/63f654c8-4a37-4091-b558-3ac95f4e7fbc)
+
+**Function: `plt.figure(figsize=(12, 5))`**
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 12 inches wide and 5 inches tall.
+
+**Function `sns.boxplot(x = 'key', y = 'streams', data = spotify, color = 'pink')`**
+
+**Description:** This line uses Seaborn's boxplot function to generate a box plot. The Spotify DataFrame's 'key' and 'streams' columns are plotted on the x and y axes, respectively, to display the distribution of stream counts for each musical key. For aesthetic effect, the plot is colored pink.
+
+**Function: `plt.title('Distribution of Streams by Key')`**
+
+**Description:** This line changes the box plot's title to "Distribution of Streams by Key," signifying that the chart shows the central tendency and distribution of streams for every musical key.
+
+**Function: `plt.xlabel('Musical Key')`**
+
+**Description:** This line labels the x-axis as `Musical Key`, clarifying that the horizontal axis represents the musical keys.
+
+**Function: `plt.ylabel('Number of Streams')`**
+
+**Description:** With this line labeling the y-axis "TNumber of Streams," the vertical axis is shown to be the number of streams.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/6d5404da-e6fa-469c-afdd-c408e22a2686)
+
+#### Graphing the distribution of streams for each key using box plot
+
+![image](https://github.com/user-attachments/assets/c4c46604-83b3-4420-ba41-dad806b1e9e6)
+
+**Function: `mode_groups = spotify.groupby('mode')['streams'].agg(['mean', 'median', 'std', 'count']).reset_index()`**
+
+**Description:** This line of code computes statistics for the 'streams' column inside each mode group and groups the Spotify DataFrame according to the 'mode' column. It uses the agg() function to calculate the mean, median, standard deviation (std), and number of streams for each mode. The grouped data is then converted back into a standard DataFrame format using the reset_index() method, producing a new DataFrame called mode_groups that compiles these statistics for every mode.
+
+**Function: `print(f"Streams statistics by mode:\n \n{mode_groups}")`**
+
+**Description:** The headline "Streams statistics by mode," followed by the mode_groups DataFrame, is printed on this line. An overview of the differences in stream counts between musical modes is given by this output, which shows the mean, median, standard deviation, and number of streams for each mode.
+
+**Function: `print(f"Streams statistics by mode:\n \n{mode_groups}")`**
+
+**Description:** This line outputs the title, "Streams statistics by mode," and then the `mode_groups` DataFrame's contents. With regard to stream variations according to musical mode, the output displays the computed statistics (mean, median, standard deviation, and count) of streams for each mode.
+
+![image](https://github.com/user-attachments/assets/792c4c33-a807-40d0-aded-1f15d52dc89f)
+
+**Function: `plt.figure(figsize=(12, 5))`**
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 12 inches wide and 5 inches tall.
+
+**Function: `sns.boxplot(x = 'mode', y = 'streams', data =s potify, color = 'purple')`**
+
+**Description:** Plotting "mode" on the x-axis and "streams" on the y-axis using data from the Spotify DataFrame, this line uses Seaborn's boxplot function to create a box plot. This plot displays the distribution of stream counts for each musical mode, which is represented by the 'mode' column. Examples of these modes are major and minor. For clarity, the plot has been shaded purple.
+
+**Function: `plt.title('Distribution of Streams by Mode (Major vs. Minor)')`**
+
+**Description:** With this line, the box plot's title is changed to "Distribution of Streams by Mode (Major vs. Minor)," signifying that the plot illustrates the differences between streams in major and minor modes.
+
+**Function: `plt.xlabel('Mode')`**
+
+**Description:** This line labels the x-axis as `Musical Key`, clarifying that the horizontal axis represents the mode.
+
+**Function: `plt.ylabel('Number of Streams')`**
+
+**Description:** With this line labeling the y-axis "TNumber of Streams," the vertical axis is shown to be the number of streams.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
