@@ -87,6 +87,21 @@ This repository contains Python codes for solving the given programming problems
 ![image](https://github.com/user-attachments/assets/1ba00c35-cd63-4045-9ad6-31134a3db3d0)
 
 
+### Basic Descriptive Statistics 
+
+**1. What are the mean, median, and standard deviation of the streams column?** 
+
+**Solution:** 
+
+**Function: `spotify['streams'] = pd.to_numeric(spotify['streams'], errors = 'coerce')`**  
+
+![image](https://github.com/user-attachments/assets/a9f15289-a45f-4ca4-89b7-81f9aeb29e75)
+
+**Note: I searched about this code because the data type of streams is in object, and I'm not sure how I will manipulate it.**  
+
+
+
+
 
 
 
