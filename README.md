@@ -360,7 +360,7 @@ Explanation:
 
 **Function: `plt.ylabel('Number of Tracks')`**
 
-**Description:** This line designates the y-axis as "Number of Tracks," meaning that the number of tracks released in a given month is represented by the vertical axis.
+**Description:** This line designates the y-axis as "Number of Tracks," meaning that the vertical axis represents the number of tracks released in a given month.
 
 **Function: `plt.tight_layout()`**
 
@@ -417,6 +417,126 @@ Explanation:
 #### Scatter plot for Streams vs. BPM
 
 ![image](https://github.com/user-attachments/assets/8fae511f-bee2-4c41-ab42-5680884c4fd6)
+
+**Function: `plt.subplot(1, 3, 1)`**
+
+**Description:** This line places the current plot in the first subplot (1st column) and creates a subplot in a grid layout of 1 row and 3 columns. This makes it possible to show more than one plot in a single figure.
+
+**Function: `sns.scatterplot(x = 'bpm', y = 'streams', data = spotify, color = 'red')`**
+
+**Description:** This line uses Seaborn's scatterplot function to generate a scatter plot. The Spotify DataFrame data is used to plot the'streams' on the y-axis against the 'bpm' (beats per minute) on the x-axis. To make the points more visible, they are dyed red.
+
+**Function" `plt.title('Streams vs. BPM')`**
+
+**Description:** This line changes the scatter plot's title to "Streams vs. BPM," revealing the plot's meaning.
+
+**Function: `plt.xlabel('BPM (Beats per Minute)')`**
+
+**Description:** This line labels the x-axis as "BPM (Beats per Minute)," clarifying that the horizontal axis represents the beats per minute of the tracks.
+
+**Function: `plt.ylabel('Number of Streams')`**
+
+**Description:** With this line labeling the y-axis "Number of Streams," the vertical axis is shown to be the number of streams for the tracks.
+
+#### Ouput 
+
+![image](https://github.com/user-attachments/assets/11a7340f-297b-46b2-a15a-02476ec20c1d)
+
+#### Scatter plot for Streams vs. Danceability
+
+![image](https://github.com/user-attachments/assets/b1801eea-4aef-4a7a-8c9b-0652bae421bd)
+
+**Function: `plt.subplot(1, 3, 2)`**
+
+**Description:** This line positions the current plot in the second subplot (2nd column) of a subplot set up in a grid layout of 1 row and 3 columns. This enables the side-by-side display of several plots in a single figure.
+
+**Function: `sns.scatterplot(x='danceability_%', y='streams', data=spotify, color='purple')`**
+
+**Description:** This line uses Seaborn's scatterplot function to generate a scatter plot. The Spotify DataFrame data is used to plot the 'danceability_%' on the x-axis versus the 'streams' on the y-axis. For distinction, the points are tinted purple.
+
+**Function: `plt.title('Streams vs. Danceability')`**
+
+**Description:** This line changes the scatter plot's title to "Streams vs. Danceability," identifying the relationship the plot is depicting.
+
+**Function: `plt.xlabel('Danceability (in %)')`**
+
+**Description:** This line labels the x-axis as `Danceability (in %)`, clarifying that the horizontal axis represents the beats per minute of the tracks.
+
+**Function: `plt.ylabel('Number of Streams')`**
+
+**Description:** With this line labeling the y-axis "Number of Streams," the vertical axis is shown to be the number of streams for the tracks.
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/5eac8cf8-e2a4-4f3c-861d-f132566ad5d9)
+
+#### Scatter plot for Streams vs. Energy
+
+![image](https://github.com/user-attachments/assets/6f07f53b-79ec-4268-93a3-ea176f28972a)
+
+**Function: `plt.subplot(1, 3, 3)`**
+
+**Description:** This line places the current plot in the third subplot (3rd column) of a subplot set up in a grid layout of 1 row and 3 columns. This makes it possible to arrange several plots next to each other in a single figure.
+
+**Function: `sns.scatterplot(x='energy_%', y='streams', data=spotify, color='skyblue')`**
+
+**Description:** This line uses Seaborn's scatterplot function to generate a scatter plot. It uses data from the Spotify DataFrame to plot the 'streams' on the y-axis against the 'energy_%' on the x-axis. To distinguish this plot from the others, the dots are colored sky blue.
+
+**Function: `plt.title('Streams vs. Energy')`**
+
+**Description:** This line changes the scatter plot's title to "Streams vs. Energy," highlighting the correlation between energy levels and stream counts that is being shown.
+
+**Function: `plt.xlabel('Energy (in %)')`**
+
+**Description:** This line labels the x-axis as `Energy (in %)`, clarifying that the horizontal axis represents the beats per minute of the tracks.
+
+**Function: `plt.ylabel('Number of Streams')`**
+
+**Description:** With this line labeling the y-axis "Number of Streams," the vertical axis is shown to be the number of streams for the tracks.
+
+**Function: `plt.tight_layout()`**
+
+**Description:** This line modifies the plot parts' spacing to ensure everything is aesthetically pleasing and fits nicely inside the figure area.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/ced5015b-f3fd-48f8-abe9-4053abbee57d)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
