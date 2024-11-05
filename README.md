@@ -38,7 +38,7 @@ This repository contains Python codes for solving the given programming problems
 
 ![image](https://github.com/user-attachments/assets/b4c9d8c6-d163-4a0d-9cd4-765ac4bb43f0)                    
 
-**Description:** This code displays the contents of a Pandas DataFrame named **spotify** after loading data from an Excel file called **spotify-2023.xlsx**. It reads the file and arranges the data in a structured manner using `pd.read_excel`, which makes it simple to examine, work with, and display in Python. Spotify, in the end, is to declare the DataFrame needed. 
+**Description:** This code displays the contents of a Pandas DataFrame named `spotify` after loading data from an Excel file called `spotify-2023.xlsx`. It reads the file and arranges the data in a structured manner using `pd.read_excel`, which makes it simple to examine, work with, and display in Python. Spotify, in the end, is to declare the DataFrame needed. 
 
 
 
