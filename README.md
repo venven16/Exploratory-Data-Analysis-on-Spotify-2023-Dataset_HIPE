@@ -734,6 +734,7 @@ Explanation:
 
 ![image](https://github.com/user-attachments/assets/6d5404da-e6fa-469c-afdd-c408e22a2686)
 
+**Explanation:** The distribution of streams by musical key is displayed in the graph. The number of streams is shown on the y-axis, while the musical key is represented on the x-axis. According to the graph, C#, F, and D are the most often used keys. B and G are the least used keys. This implies that when it comes to streaming music, there is a preference for particular musical keys.
 
 ![image](https://github.com/user-attachments/assets/c4c46604-83b3-4420-ba41-dad806b1e9e6)
 
@@ -748,8 +749,6 @@ Explanation:
 ### Output 
 
 ![image](https://github.com/user-attachments/assets/27341396-5a0c-48d5-8d6d-ca58367f3722)
-
-**Explanation:** The distribution of streams by musical key is displayed in the graph. The number of streams is shown on the y-axis, while the musical key is represented on the x-axis. According to the graph, C#, F, and D are the most often used keys. B and G are the least used keys. This implies that when it comes to streaming music, there is a preference for particular musical keys.
 
 #### Graphing the distribution of streams for each key using box plot
 
