@@ -8,8 +8,8 @@ This repository contains Python codes for solving the given programming problems
 #### Things to do first before answering the guide question:
  
 Declaring all the libraries needed for the whole project. 
-![image](https://github.com/user-attachments/assets/e1a7c135-9337-457b-bd68-a9799cd75e4c)
 
+![image](https://github.com/user-attachments/assets/e1a7c135-9337-457b-bd68-a9799cd75e4c)
 
 
 **Library:** import numpy as np
