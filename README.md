@@ -144,6 +144,34 @@ This repository contains Python codes for solving the given programming problems
 
 ![image](https://github.com/user-attachments/assets/6fbd9c0a-e67a-4eb9-8e05-93ccad59c940)
 
+##### Graph for `released_year` 
+
+**Function: `plt.figure(figsize=(12, 5))`**
+
+**Description:** It creates a new figure and sets up the area for subplots by setting its size to 12 by 5 inches.
+
+**Function: `plt.subplot(1, 2, 1)`**
+
+**Description:** It specifies the first subplot in a 1x2 grid layout, designating the first of two adjacent positions for this plot. 
+
+**Function: `sns.histplot(spotify['released_year'], bins=10, kde=True)`**
+
+**Description:** The released_year column is histogrammed with 10 bins, and a kernel density estimate (KDE) curve is superimposed to generate a smooth line that depicts the data distribution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
