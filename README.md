@@ -30,8 +30,11 @@ Declaring all the libraries needed for the whole project.
 
 **Description:** A popular Python charting toolkit that provides low-level control to produce a range of static, animated, and interactive representations. It is helpful for intricate plot modification and forms the basis for various visualization libraries (such as Seaborn).
 
+
 Read the Data Set that was given to us: 
+
 ![image](https://github.com/user-attachments/assets/dd02589a-0fd7-4310-a82b-cc58e43a69b3)
+
 **Function:** spotify = pd.read_excel('spotify-2023.xlsx') spotify                    
 
 **Description:** This code displays the contents of a Pandas DataFrame named **spotify** after loading data from an Excel file called **spotify-2023.xlsx**. It reads the file and arranges the data in a structured manner using `pd.read_excel`, which makes it simple to examine, work with, and display in Python. Spotify in the end is to declare the DataFrame needed. 
