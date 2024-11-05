@@ -271,6 +271,59 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** An output introducing the top five musicians with the most tracks is displayed by the code snippet `print(f"The Top 5 Most Frequent Artists Based on the Number of Tracks: \n")` followed by `print(top_artists)`. Context is provided by the first line using an f-string, and these artists' names and track counts are printed in the second line using the `top_artists` variable. The results are presented in an easy-to-read style.
 
+#### Output 
+
+![image](https://github.com/user-attachments/assets/f25bfe44-c7aa-4d21-b501-71b374a8923c)
+
+### Temporal Trends 
+
+**1. Analyze the trends in the number of tracks released over time. Plot the number of tracks released per year.**
+
+**Function: `tracks_per_year = spotify['released_year'].value_counts().sort_index()`**
+
+![image](https://github.com/user-attachments/assets/3dc7b8b5-cbdd-40d1-8e0e-c7faec96f1d2)
+
+**Description:** The line of code tracks_per_year = spotify['released_year'].value_counts().sort_index() counts the number of tracks released each year in the spotify DataFrame. It accesses the 'released_year' column, uses value_counts() to tally the occurrences of each year, and applies sort_index() to arrange the results in chronological order. This creates a series called tracks_per_year that shows the distribution of track releases by year.
+
+**2. Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases?**
+
+![image](https://github.com/user-attachments/assets/5563e279-f35f-4ff3-8bab-2b8af9b1c1e2)
+
+**Function: `plt.figure(figsize=(12, 6))`**
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 12 inches wide and 6 inches tall.
+
+**Function: `sns.lineplot(data=tracks_per_year, marker='o')`**
+
+**Description:** This line uses Seaborn's lineplot function to create a line plot. The data source is tracks_per_year, and to improve visualization, circular marks (marker='o') are added at each data point.
+
+**Function: `plt.title('Number of Tracks Released Per Year')`**
+
+**Description:** By setting the plot's title to "Number of Tracks Released Per Year," this line gives the visitor background information about what the graph depicts.
+
+**Function: `plt.xlabel('Year')`**
+
+**Description:** With this line labeling the x-axis "Year," the years of track releases are represented on the horizontal axis.
+
+**Function: `plt.ylabel('Number of Tracks')`**
+
+**Description:** By labeling the y-axis "Number of Tracks," this line indicates that the vertical axis shows the total number of tracks that have been released.
+
+**Function: `plt.grid()`**
+
+**Description:** By adding a grid to the plot and giving reference lines, this line facilitates reading and interpreting the data.
+
+**Function: `plt.tight_layout()`**
+
+**Description:** This line modifies the plot parts' spacing to ensure everything is aesthetically pleasing and fits nicely inside the figure area.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+
+
+
 
 
 
