@@ -11,7 +11,6 @@ This repository contains Python codes for solving the given programming problems
 
 ![image](https://github.com/user-attachments/assets/e1a7c135-9337-457b-bd68-a9799cd75e4c)
 
-
 **Library:** **`import numpy as np`**
 
 **Description:** A powerful Python Library for numerical computing is mostly used for managing arrays and mathematical calculations. Numerous mathematical operations and functions essential to scientific computing and data management are supported.
@@ -735,7 +734,6 @@ Explanation:
 
 ![image](https://github.com/user-attachments/assets/6d5404da-e6fa-469c-afdd-c408e22a2686)
 
-#### Graphing the distribution of streams for each key using box plot
 
 ![image](https://github.com/user-attachments/assets/c4c46604-83b3-4420-ba41-dad806b1e9e6)
 
@@ -747,9 +745,13 @@ Explanation:
 
 **Description:** The headline "Streams statistics by mode," followed by the mode_groups DataFrame, is printed on this line. An overview of the differences in stream counts between musical modes is given by this output, which shows the mean, median, standard deviation, and number of streams for each mode.
 
-**Function: `print(f"Streams statistics by mode:\n \n{mode_groups}")`**
+### Output 
 
-**Description:** This line outputs the title, "Streams statistics by mode," and then the `mode_groups` DataFrame's contents. With regard to stream variations according to musical mode, the output displays the computed statistics (mean, median, standard deviation, and count) of streams for each mode.
+![image](https://github.com/user-attachments/assets/27341396-5a0c-48d5-8d6d-ca58367f3722)
+
+**Explanation:** The distribution of streams by musical key is displayed in the graph. The number of streams is shown on the y-axis, while the musical key is represented on the x-axis. According to the graph, C#, F, and D are the most often used keys. B and G are the least used keys. This implies that when it comes to streaming music, there is a preference for particular musical keys.
+
+#### Graphing the distribution of streams for each key using box plot
 
 ![image](https://github.com/user-attachments/assets/792c4c33-a807-40d0-aded-1f15d52dc89f)
 
@@ -777,6 +779,162 @@ Explanation:
 
 **Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
 
+### Output 
+
+![image](https://github.com/user-attachments/assets/17f4cdc6-cbd0-47c7-93e2-65c1f957f265)
+
+**Explanation:** The distribution of streams for songs in major and minor keys is displayed in this boxplot. The boxplot indicates that songs in a minor key have a marginally higher median number of streams. While some songs in both major and minor keys have a notably higher number of streams than others, the boxplot also reveals a number of outliers (shown by circles) in the data. This implies that a song's key might not be a reliable indicator of how many streams it will get.
+
+**2. Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.**
+
+![image](https://github.com/user-attachments/assets/a117a242-22e5-40f5-a885-513642f6eeb6)
+
+**Function: `spotify['total_playlists'] = (spotify['in_spotify_playlists'] + spotify['in_apple_playlists'] + spotify['in_deezer_playlists'])`**
+
+**Description:** This line adds a new column to the Spotify DataFrame called "total_playlists," which contains the total number of playlists for each tune on Spotify, Apple Music, and Deezer. The total number of playlists a tune appears on is shown in this column.
+
+**Function: `spotify['total_charts'] = (spotify['in_spotify_charts'])`**
+
+**Description:** The 'in_spotify_charts' column's value is stored in a new column called 'total_charts' created by this line. It precisely records if a song is on the Spotify charts.
+
+**Function: `artist_playlist_counts = spotify.groupby('artist(s)_name')['total_playlists'].sum().reset_index()`**
+
+**Description:** This line combines the Spotify DataFrame by artist name ('artist(s)_name') and adds up the numbers in 'total_playlists' to determine how many playlists each artist's music is in. A new DataFrame named artist_playlist_counts contains the results.
+
+**Function: `artist_chart_counts = spotify.groupby('artist(s)_name')['total_charts'].sum().reset_index()`**
+
+**Description:** Similarly, this line combines the data per artist and adds up the numbers in 'total_charts' to determine each artist's total number of chart appearances. Artist_chart_counts is where the results are kept.
+
+**Function: `artist_counts = pd.merge(artist_playlist_counts, artist_chart_counts, on = 'artist(s)_name', how = 'outer')`**
+
+**Description:** This line creates a combined DataFrame artist_counts by combining artist_playlist_counts and artist_chart_counts on the artist name column. It does this by utilizing an outer join to include all artists from both DataFrames.
+
+**Function: `artist_counts.columns = ['artist_name', 'total_playlists', 'total_charts']`**
+
+**Description:** 'artist_name', 'total_playlists', and 'total_charts' are the new names for the artist_counts columns that this line sets for clarity.
+
+**Function: `artist_counts = artist_counts.sort_values(by = 'total_playlists', ascending = False).head(10)`**
+
+**Description:** This line selects the top 10 artists with the highest playlist counts by sorting artist_counts according to 'total_playlists' in descending order.
+
+### Visualization of Top 10 Artist in terms of Appearances in Playlist and Charts using bar plot
+
+![image](https://github.com/user-attachments/assets/9c874b9f-f715-4f84-81f5-23fe7f0a1887)
+
+**Function: `plt.figure(figsize=(16, 7))`**
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 16 inches wide and 7 inches tall.
+
+**Function: `sns.barplot(x = 'total_playlists', y = 'artist_name', data = artist_counts, color = 'pink', label = 'Playlists')`**
+
+**Description:** This line uses Seaborn's barplot function to construct a horizontal bar plot with 'artist_name' on the y-axis and 'total_playlists' on the x-axis. The total number of playlist appearances for each artist is represented by pink bars that are colored using data from artist_counts.
+
+**Function: `sns.barplot(x = 'total_charts', y = 'artist_name', data = artist_counts, color = 'purple', label = 'Charts', alpha = 0.5)`**
+
+**Description:** This line plots 'total_charts' (chart appearances) against 'artist_name' to create a second bar plot on top of the first. The purple bars are semi-transparent due to their alpha value of 0.5, which lets the pink playlist bars peek through. This makes comparisons simpler by producing a stacked effect.
+
+**Function: `plt.title('Top 10 Artists by Total Appearances in Playlists and Charts')`**
+
+**Description:** "Top 10 Artists by Total Appearances in Playlists and Charts," which describes the data displayed, is the plot title defined by this line.
+
+**Function: `plt.xlabel('Total Appearances')`**
+
+**Description:** In this line, the x-axis is labeled "Total Appearances," meaning that the number of appearances in playlists and charts is represented by the horizontal bars.
+
+**Function: `plt.ylabel('Artist Name')`**
+
+**Description:** This line designates the y-axis as "Artist Name," indicating that each bar corresponds to a top-10 artist.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+### Output 
+
+![image](https://github.com/user-attachments/assets/9210d979-f64b-4df4-8049-b6913a057bfc)
+
+**Explanation:**  The top ten artists by total number of playlist and chart appearances are displayed in this horizontal bar chart. Taylor Swift, Ed Sheeran, and The Weeknd are the artists with the most appearances. Playlists and charts make up the two sections of the chart. A purple bar indicates the charts area, and a pink bar indicates the playlists part. Each bar's height indicates how many times the musician has performed overall. Ed Sheeran is the musician with the most appearances on charts, and The Weeknd is the artist with the most appearances on playlists.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
