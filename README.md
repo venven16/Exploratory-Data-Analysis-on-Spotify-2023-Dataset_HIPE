@@ -224,6 +224,21 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
 
+#### Output for `released_year` 
+
+![image](https://github.com/user-attachments/assets/feca01b6-c2df-4c7d-aaa9-fd637fa88c9d)
+
+**Explanation:** The distribution of song release years in the dataset is shown in this picture using a box plot on the right and a histogram on the left. The histogram indicates a right-skewed distribution where recent releases predominate, which reveals that most songs were released in the last few years, with a notable concentration in the 2020s. With a peak close to the most recent years, the Kernel Density Estimate (KDE) curve validates this concentration. The box plot on the right shows the variability and central tendency, with the median year near the most recent period. Compared to the new releases, the many outliers on the left are songs from earlier decades (before the 2000s). This graphic indicates that the dataset is biased toward newer songs, with older releases being exceptions rather than the norm.
+
+#### Output for `artist_count` 
+
+![image](https://github.com/user-attachments/assets/ac45bf8c-3580-4054-8b4a-1662c6665ac4)
+
+**Explanation:** The distribution of the "artist_count" variable is shown in this image, which indicates that most songs only have one artist and that the number decreases when more artists are added. Solo performances are more prevalent, while collaborations are less common, as indicated by the histogram and KDE curve (left) showing a left-skewed distribution. With a few outliers for songs with four or more performers, the box plot (right) displays the median for a single artist. Overall, only a few songs feature many artists, mostly by solo musicians.
+
+
+### Top Performers  
+
 
 
 
