@@ -285,8 +285,6 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** The line of code tracks_per_year = spotify['released_year'].value_counts().sort_index() counts the number of tracks released each year in the spotify DataFrame. It accesses the 'released_year' column, uses value_counts() to tally the occurrences of each year, and applies sort_index() to arrange the results in chronological order. This creates a series called tracks_per_year that shows the distribution of track releases by year.
 
-**2. Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases?**
-
 ![image](https://github.com/user-attachments/assets/5563e279-f35f-4ff3-8bab-2b8af9b1c1e2)
 
 **Function: `plt.figure(figsize=(12, 6))`**
@@ -320,6 +318,115 @@ This repository contains Python codes for solving the given programming problems
 **Function: `plt.show()`**
 
 **Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+#### Output
+
+![image](https://github.com/user-attachments/assets/124f7148-f817-4dd8-a5b1-6ce761637aab)
+
+Explanation: 
+
+
+**2. Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases?**
+
+**Function: `tracks_per_month = spotify['released_month'].value_counts().sort_index()`**
+
+![image](https://github.com/user-attachments/assets/ef549d63-c31f-4681-8007-7507dda01025)
+
+**Description:** The number of tracks released each month in the `spotify` DataFrame is counted by the line of code `tracks_per_month = spotify['released_month'].value_counts().sort_index()`. The `'released_month'` column is accessed, the occurrences of each month are counted using `value_counts()`, and the results are arranged chronologically using `sort_index()`. A sorted Series displaying the distribution of track releases per month will be contained in the variable `tracks_per_month`.
+
+**Function: `month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']`**
+
+![image](https://github.com/user-attachments/assets/46cc84ef-3786-49f3-a92b-1f6e0fd90d60)
+
+**Description:** `month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']` generates a list named month_names that includes the acronyms for the twelve months of the year. You can use this list to label month-related data or visualizations.
+
+![image](https://github.com/user-attachments/assets/e53ca6f0-5422-4978-8e08-29bcf3bb7d8e)
+
+**Function: `plt.figure(figsize=(10, 5))`**
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 10 inches wide and 5 inches tall.
+
+**Function: `plt.bar(month_names, tracks_per_month.reindex(range(1, 13), fill_value =0), color = 'red',)`**
+
+**Description:** This line uses the bar function in Matplotlib to generate a bar chart. The months of the year are represented by the month_names label on the x-axis. Tracks_per_month provides the y-axis data, which is reindexed to guarantee that every month from January (1) to December (12) is present. Any missing months are filled in with a count of 0 using fill_value=0. Red is the color of the bars.
+
+**Function: `plt.title('Number of Tracks Released Per Month')`**
+
+**Description:** This line updates the bar chart's title to "Number of Tracks Released Per Month," giving the chart's meaning some context.
+
+**Function: `plt.xlabel('Month')`**
+
+**Description:** This line designates the x-axis as "Month," signifying that the months of the year are represented on the horizontal axis.
+
+**Function: `plt.ylabel('Number of Tracks')`**
+
+**Description:** This line designates the y-axis as "Number of Tracks," meaning that the number of tracks released in a given month is represented by the vertical axis.
+
+**Function: `plt.tight_layout()`**
+
+**Description:** This line modifies the plot parts' spacing to ensure everything is aesthetically pleasing and fits nicely inside the figure area.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+![image](https://github.com/user-attachments/assets/4f7abe46-3ae7-4de1-8451-15e531d4b62b)
+
+**Function: `most_releases_month = tracks_per_month.idxmax()`**
+
+**Description** This line uses the idxmax() function on the tracks_per_month Series to identify the month with the most track releases. The index (month number) corresponding to the highest value is returned.
+
+**Function: `most_releases_count = tracks_per_month.max()`**
+
+**Description:** This line uses the tracks_per_month Series' max() function to retrieve the maximum number of track releases. This value is saved in the most_releases_count variable.
+
+**Function: `print(f"The month sees the most releases is {month_names[most_releases_month - 1]} with {most_releases_count} releases.")`**
+
+**Description:** The results are summarized in a prepared text printed in this line. The maximum release count and the month name (accessible by indexing into month_names with most_releases_month - 1 to accommodate for zero-based indexing) are included using an f-string. The message shows how many releases occurred in a given month and which had the most releases.
+
+#### Output
+
+![image](https://github.com/user-attachments/assets/752bb668-f0a3-488c-969c-5b7fe959c165)
+
+**Explanation:** The bar graph shows the number of released tracks per month in 2023. It showed that January has the highest number of tracks released. 
+
+### Genre and Music Characteristics
+
+**1. Examine the correlation between streams and musical attributes like bpm, danceability_%, and energy_%. Which attributes seem to influence streams the most?**
+
+**Function: `correlation_matrix = spotify[['streams', 'bpm', 'danceability_%', 'energy_%']].corr()`**
+
+![image](https://github.com/user-attachments/assets/601ba3a5-da4b-47c1-ac08-c35620e9c334)
+
+**Description:** The correlation matrix for the chosen numerical columns in the `spotify` DataFrame—`'streams'`, `'bpm'`, `'danceability_%'`, and `'energy_%'`—is computed by the line of code `correlation_matrix = spotify[['streams', 'bpm', 'danceability_%', 'energy_%']].corr()`. The pairwise correlation coefficients between these attributes are calculated by the `corr()` function, producing a DataFrame showing their correlations' direction and strength.
+
+**Function: `print("Correlation Matrix between Streams and Musical Attributes: \n") print(correlation_matrix)`**
+
+**Description:** The code snippet `print("Correlation Matrix between Streams and Musical Attributes: \n")` followed by `print(correlation_matrix)` introduces and displays the correlation matrix. The first line provides context by stating that the matrix shows the relationships between track streams and musical attributes. In contrast, the second line outputs the correlation coefficients, allowing the user to analyze these relationships.
+
+#### Output 
+
+![image](https://github.com/user-attachments/assets/91bc5644-2604-4b43-b367-7afb5d00757c)
+
+**Function: `plt.figure(figsize=(18, 5))`**
+
+![image](https://github.com/user-attachments/assets/c486a0f1-537f-4205-9ac3-7fe91d07eea8)
+
+**Description:** To guarantee that the plot has a distinct and suitable aspect ratio, this line generates a new figure for the plot 18 inches wide and 5 inches tall.
+
+#### Scatter plot for Streams vs. BPM
+
+![image](https://github.com/user-attachments/assets/8fae511f-bee2-4c41-ab42-5680884c4fd6)
+
+
+
+
+
+
+
+
+
+
 
 
 
