@@ -40,14 +40,9 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** This code displays the contents of a Pandas DataFrame named `spotify` after loading data from an Excel file called `spotify-2023.xlsx`. It reads the file and arranges the data in a structured manner using `pd.read_excel`, which makes it simple to examine, work with, and display in Python. Spotify, in the end, is to declare the DataFrame needed. 
 
+#### Output: 
 
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/5a319912-3c62-4e34-a33b-341d7d07b400)
 
 
 #### Guide Questions: 
@@ -55,6 +50,7 @@ This repository contains Python codes for solving the given programming problems
 ##### 1. How many rows and columns does the dataset contain?
 ##### Solution:
 
+**Function:** 
 
 
 
