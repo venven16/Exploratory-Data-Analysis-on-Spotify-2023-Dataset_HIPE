@@ -239,8 +239,45 @@ This repository contains Python codes for solving the given programming problems
 
 ### Top Performers  
 
+**1. Which track has the highest number of streams? Display the top 5 most streamed tracks.**'
+
+**Function: `top_five_tracks = spotify.sort_values(by = 'streams', ascending = False).head(5)`**
+
+![image](https://github.com/user-attachments/assets/a958aa19-23eb-4ec7-aa9a-eaedc9f6c67e)
+
+**Description:** This line places the most streamed tracks at the top of the Spotify DataFrame by sorting them by the 'streams' column in descending order. The top five rows, which correspond to the top five most-streamed tracks, are then chosen.
+
+**Function: `print("The Top 5 Most Streamed Tracks in Spotify for 2023: ")` `print(top_five_tracks[['track_name', 'streams']])`**
+
+![image](https://github.com/user-attachments/assets/14b8c72c-d09d-40eb-b273-47c2c63ba3e5)
+
+**Description:** The output is introduced with a title message printed by this code snippet, which states that the top 5 most-streamed tunes in 2023 are represented by the results below. From the top_five_tracks DataFrame, it shows only the 'track_name' and 'streams' columns, highlighting the names and stream counts of these top tracks.
+
+#### Output
+
+![image](https://github.com/user-attachments/assets/d596bfca-afc4-4ce3-8f78-d3db65b47d4b)
+
+**2. Who are the top 5 most frequent artists based on the number of tracks in the dataset?**
+
+**Function: `top_artists = spotify['artist(s)_name'].value_counts().head(5)`**
+
+![image](https://github.com/user-attachments/assets/56456abf-41e1-41f2-b761-05243c9ebdf5)
+
+**Description:** The top five most often listed artists in the `spotify` DataFrame are identified by the line of code `top_artists = spotify['artist(s)_name'].value_counts().head(5)`. The `value_counts()` function is used to count the instances of each artist's name in the `'artist(s)_name'` column, and `head(5)` is applied to obtain the top five artists with the most track counts. The outcome, which is kept in `top_artists`, offers information about the most well-known artists in the collection. 
+
+**Function: `print(f"The Top 5 Most Frequent Artist Based on the Number of Tracks: \n") print(top_artists)`**
+
+![image](https://github.com/user-attachments/assets/9e5d0caa-2de7-4946-96c3-4c93912102c8)
+
+**Description:** An output introducing the top five musicians with the most tracks is displayed by the code snippet `print(f"The Top 5 Most Frequent Artists Based on the Number of Tracks: \n")` followed by `print(top_artists)`. Context is provided by the first line using an f-string, and these artists' names and track counts are printed in the second line using the `top_artists` variable. The results are presented in an easy-to-read style.
 
 
+
+
+
+
+
+ 
 
 
 
