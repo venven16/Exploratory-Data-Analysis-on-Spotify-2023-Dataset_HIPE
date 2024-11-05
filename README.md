@@ -8,7 +8,8 @@ This repository contains Python codes for solving the given programming problems
 #### Things to do first before answering the guide question:
  
 Declaring all the libraries needed for the whole project. 
-![image](https://github.com/user-attachments/assets/4ccee2d6-048b-4dd7-bce7-21adcb1c5be9)
+![image](https://github.com/user-attachments/assets/e1a7c135-9337-457b-bd68-a9799cd75e4c)
+
 
 
 **Library:** import numpy as np
@@ -33,11 +34,12 @@ Declaring all the libraries needed for the whole project.
 
 Read the Data Set that was given to us: 
 
-![image](https://github.com/user-attachments/assets/dd02589a-0fd7-4310-a82b-cc58e43a69b3)
+![image](https://github.com/user-attachments/assets/b4c9d8c6-d163-4a0d-9cd4-765ac4bb43f0)
+
 
 **Function:** spotify = pd.read_excel('spotify-2023.xlsx') spotify                    
 
-**Description:** This code displays the contents of a Pandas DataFrame named **spotify** after loading data from an Excel file called **spotify-2023.xlsx**. It reads the file and arranges the data in a structured manner using `pd.read_excel`, which makes it simple to examine, work with, and display in Python. Spotify in the end is to declare the DataFrame needed. 
+**Description:** This code displays the contents of a Pandas DataFrame named **spotify** after loading data from an Excel file called **spotify-2023.xlsx**. It reads the file and arranges the data in a structured manner using `pd.read_excel`, which makes it simple to examine, work with, and display in Python. Spotify, in the end, is to declare the DataFrame needed. 
 
 
 
