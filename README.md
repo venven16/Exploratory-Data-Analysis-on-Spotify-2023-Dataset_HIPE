@@ -146,6 +146,8 @@ This repository contains Python codes for solving the given programming problems
 
 ##### Graph for `released_year` 
 
+![image](https://github.com/user-attachments/assets/6e00a9cc-e30a-416d-9d32-b460c416d943)
+
 **Function: `plt.figure(figsize=(12, 5))`**
 
 **Description:** It creates a new figure and sets up the area for subplots by setting its size to 12 by 5 inches.
