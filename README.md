@@ -160,6 +160,77 @@ This repository contains Python codes for solving the given programming problems
 
 **Description:** The released_year column is histogrammed with 10 bins, and a kernel density estimate (KDE) curve is superimposed to generate a smooth line that depicts the data distribution.
 
+**Function: `plt.title("Distribution for Released Year")`**
+
+**Description:** It establishes the first plot's title to outline its contents.
+
+**Function: `plt.subplot(1, 2, 2)`**
+
+**Description:** Place this plot next to the first subplot by moving to the second subplot slot in the 1x2 grid.
+
+**Function: `sns.boxplot(x = spotify['released_year'])`**
+
+**Description:** It creates a box plot with the spread, median, and any outliers for the released_year column.
+
+**Function: `plt.title("Box Plot for Released Year")`**
+
+**Description:** It sets the second plot's title to indicate that it is the box plot for the year that was released.
+
+**Function: `plt.tight_layout()`**
+
+**Description:** Modifies the distance between subplots to create a neat, non-overlapping arrangement.
+
+**Function: `plt.show()`**
+
+**Description:** Renders the graphic so the box plot and histogram can be analyzed concurrently.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
